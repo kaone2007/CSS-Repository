@@ -1,0 +1,465 @@
+/* ==========================================================
+   CSS RESET
+========================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==========================================================
+   ROOT VARIABLES
+========================================================== */
+:root {
+    --primary-color: #0b5ed7;
+    --secondary-color: #1e293b;
+    --background-color: #f4f7fb;
+    --text-color: #222;
+    --white: #ffffff;
+    --border-color: #d1d5db;
+    --success-color: #16a34a;
+    --warning-color: #f59e0b;
+    --danger-color: #dc2626;
+
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    --radius: 10px;
+    --transition: 0.3s ease;
+}
+
+/* ==========================================================
+   GLOBAL STYLES
+========================================================== */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    letter-spacing: 0.5px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 1rem;
+}
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+a[href="#main-content"] {
+    position: absolute;
+    left: -9999px;
+}
+
+a[href="#main-content"]:focus {
+    left: 10px;
+    top: 10px;
+    background: black;
+    color: white;
+    padding: 10px;
+    z-index: 1000;
+}
+
+/* ==========================================================
+   TYPOGRAPHY
+========================================================== */
+h1,
+h2,
+h3,
+h4 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    border-left: 6px solid var(--primary-color);
+    padding-left: 12px;
+    margin-top: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+p,
+li,
+td,
+th,
+label,
+input,
+select,
+textarea {
+    font-size: 1rem;
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+header {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+header p {
+    margin-top: 1rem;
+    color: #555;
+}
+
+/* ==========================================================
+   NAVIGATION
+========================================================== */
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--white);
+    background-color: var(--primary-color);
+    padding: 0.8rem 1.2rem;
+    border-radius: var(--radius);
+    transition: var(--transition);
+    font-weight: bold;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: #084298;
+    transform: translateY(-3px);
+}
+
+/* ==========================================================
+   IMAGE STYLING
+========================================================== */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    margin-top: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+/* ==========================================================
+   SECTIONS
+========================================================== */
+section {
+    background-color: var(--white);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+/* ==========================================================
+   TABLES
+========================================================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    overflow-x: auto;
+}
+
+caption {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+th,
+td {
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    text-align: left;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+tr:hover {
+    background-color: #eef4ff;
+}
+
+/* ==========================================================
+   LISTS
+========================================================== */
+ul,
+ol {
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+li {
+    margin-bottom: 0.8rem;
+}
+
+/* ==========================================================
+   FORMS
+========================================================== */
+form {
+    margin-top: 1.5rem;
+}
+
+fieldset {
+    border: 2px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+}
+
+legend {
+    padding: 0 10px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.9rem;
+    margin-top: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(11, 94, 215, 0.5);
+}
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+input[type="submit"],
+input[type="reset"] {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: var(--transition);
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #084298;
+    transform: translateY(-3px);
+}
+
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+/* ==========================================================
+   LINKS
+========================================================== */
+a {
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: #084298;
+}
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 2rem;
+    border-radius: var(--radius);
+    text-align: center;
+}
+
+footer a {
+    color: #93c5fd;
+}
+
+footer nav a {
+    background-color: transparent;
+    padding: 0;
+}
+
+footer nav a:hover {
+    color: white;
+    transform: none;
+}
+
+/* ==========================================================
+   HORIZONTAL RULE
+========================================================== */
+hr {
+    margin: 2rem 0;
+    border: none;
+    border-top: 2px solid #dbe4f0;
+}
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+========================================================== */
+
+/* ==========================
+   TABLETS
+========================== */
+@media (max-width: 992px) {
+
+    body {
+        padding: 0.8rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    nav ul {
+        flex-direction: row;
+        gap: 0.7rem;
+    }
+
+    section,
+    header,
+    footer {
+        padding: 1.5rem;
+    }
+}
+
+/* ==========================
+   MOBILE DEVICES
+========================== */
+@media (max-width: 768px) {
+
+    body {
+        font-size: 0.95rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+        width: 100%;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 1rem;
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius);
+        padding: 1rem;
+        background-color: white;
+    }
+
+    td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td::before {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        font-weight: bold;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    input,
+    select,
+    textarea {
+        font-size: 1rem;
+    }
+}
+
+/* ==========================
+   SMALL MOBILE DEVICES
+========================== */
+@media (max-width: 480px) {
+
+    body {
+        padding: 0.5rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    section,
+    header,
+    footer {
+        padding: 1rem;
+    }
+
+    nav a {
+        padding: 0.7rem;
+        font-size: 0.9rem;
+    }
+}
